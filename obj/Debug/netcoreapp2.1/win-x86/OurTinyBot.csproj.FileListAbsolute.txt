@@ -1,0 +1,14 @@
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\hostpolicy.dll
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\hostfxr.dll
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\OurTinyBot.exe
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\OurTinyBot.deps.json
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\OurTinyBot.runtimeconfig.json
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\OurTinyBot.runtimeconfig.dev.json
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\OurTinyBot.dll
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\win-x86\OurTinyBot.pdb
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\win-x86\OurTinyBot.csprojAssemblyReference.cache
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\win-x86\OurTinyBot.csproj.CoreCompileInputs.cache
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\win-x86\OurTinyBot.AssemblyInfoInputs.cache
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\win-x86\OurTinyBot.AssemblyInfo.cs
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\win-x86\OurTinyBot.dll
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\win-x86\OurTinyBot.pdb

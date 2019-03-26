@@ -1,0 +1,11 @@
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\OurTinyBot.csproj.CoreCompileInputs.cache
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\OurTinyBot.AssemblyInfoInputs.cache
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\OurTinyBot.AssemblyInfo.cs
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\OurTinyBot.deps.json
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\OurTinyBot.runtimeconfig.json
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\OurTinyBot.runtimeconfig.dev.json
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\OurTinyBot.dll
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\bin\Debug\netcoreapp2.1\OurTinyBot.pdb
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\OurTinyBot.dll
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\OurTinyBot.pdb
+C:\Users\Fadi A\Google Drive\Programming\C# Stuff Old\OurTinyBot\OurTinyBot\obj\Debug\netcoreapp2.1\OurTinyBot.csprojAssemblyReference.cache
