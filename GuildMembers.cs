@@ -7,10 +7,10 @@ namespace OurTinyBot
 {
     class GuildMembers
     {
-        private string memberList;
-        private string reqeustList;
-        private string annoyingfuckstext;
-
+        private string memberList; // 
+        private string reqeustList; // 
+        private string annoyingfuckstext; // 
+        // lists of data files needed to maintain a semi database for the program. all functions are identical in behavior but for mutliple types
         private List<Member> members;
         private List<Request> requests;
         private List<AnnoyingFucks> annoyings;
@@ -32,7 +32,7 @@ namespace OurTinyBot
         }
 
         #region members
-
+        //loads members from datafile
         private void LoadMembers()
         {
             string[] lines = File.ReadAllLines(this.memberList);
@@ -42,13 +42,13 @@ namespace OurTinyBot
                 members.Add(new Member(ulong.Parse(s)));
             }
         }
-
+        // add a member to list
         public void AddMember(ulong id)
         {
             members.Add(new Member(id));
             SaveMembers();
         }
-
+        //outputs list to datafile
         private void SaveMembers()
         {
             string text = "";
@@ -59,7 +59,7 @@ namespace OurTinyBot
 
             File.WriteAllText(memberList, text);
         }
-
+        //removes member from list 
         public void RemoveMember(ulong id)
         {
             for (int i = 0; i < members.Count; i++)
@@ -73,7 +73,7 @@ namespace OurTinyBot
 
             SaveMembers();
         }
-
+        //checks if member already exists
         public bool AlreadyAMember(ulong id)
         {
             for (int i = 0; i < members.Count; i++)
@@ -84,7 +84,7 @@ namespace OurTinyBot
 
             return false;
         }
-
+        //prints out all members in file.
         public string ViewMembers()
         {
             string s = "";
