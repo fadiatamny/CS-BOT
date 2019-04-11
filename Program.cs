@@ -14,7 +14,7 @@ namespace OurTinyBot
         static DiscordClient discord;
         static CommandsNextModule commands; //commands
         static InteractivityModule interactivity; // interactive messaging 
-        static string tok;
+        static string tok; // for getting the token for the bot from token files.
 
         static void Main(string[] args)
         { 
