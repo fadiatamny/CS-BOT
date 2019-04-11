@@ -13,6 +13,7 @@ namespace OurTinyBot
 {
     public class Commands
     {
+	//init a instance of GUILD class with data files.
         GuildMembers guild = new GuildMembers(
             @".\Data.txt",
             @".\Requests.txt",
@@ -20,7 +21,8 @@ namespace OurTinyBot
 
         const string BotManager = "BotManager";
         const string DecMaster = "DecMaster";
-
+	    
+	//prints commands
         [Command("Commands")]
         public async Task commandslist(CommandContext ctx)
         {
@@ -80,15 +82,18 @@ namespace OurTinyBot
         }
 
         #region BotManager
-
+	//region for botmanager privlige functions
+		
+	//function that runs the time checker for ingame boss spawns
         [Command("BossSchedule")]
         [RequireRolesAttribute(BotManager)]
         public async Task BossCheck(CommandContext ctx)
         {
             if (ctx.Channel.Name != "boss-timer")
                 return;
-
+	
             #region initilize
+		
             DateTime t;
             bool state = false;
             SpawnTimes st = new SpawnTimes();
@@ -114,6 +119,7 @@ namespace OurTinyBot
 
             string nextBoss = "";
 
+	    //main loop function. it runs 24/7 and checks if a boss has spawned given the correct time
             while (true)
             {
                 t = DateTime.Now;
@@ -129,7 +135,7 @@ namespace OurTinyBot
                     {
                         if (t.Minute % 5 == 0)
                         {
-                            state = true;
+                            state = true; //var to makke sure the timer is dead center less than 2 seconds off. for more accurate bot.
                         }
 
                         else
@@ -142,6 +148,7 @@ namespace OurTinyBot
 
                 else
                 {
+		    //choose correct the day of week with corresponding spawnlist sheet 
                     switch (t.Date.DayOfWeek)
                     {
                         case DayOfWeek.Monday:
@@ -253,19 +260,19 @@ namespace OurTinyBot
                     #endregion
 
                     int mins = 60;
-
+		    //check if its spawning in an hour of now
                     int x = st.GetIndexTime(t.TimeOfDay.Add(new TimeSpan(01, 00, 00)));
 
                     if (x == -1)
                     {
-
+			//checks if its spawining in 15 minutes
                         x = st.GetIndexTime(t.TimeOfDay.Add(new TimeSpan(00, 15, 00)));
                         mins = 15;
                     }
 
                     if (x == -1)
                     {
-
+			// check if it spawned.
                         x = st.GetIndexTime(t.TimeOfDay.Add(new TimeSpan(00, 00, 00)));
                         mins = 0;
                     }
@@ -287,8 +294,8 @@ namespace OurTinyBot
                             }
                         }
 
-                        spawned = false;
-                        ftime = false;
+                        spawned = false; // var for if it spawned or not
+                        ftime = false; // var for first spawn of the day so it wont go deletting messages before.
 
                         if (ls[x].CompareTo("NONE - Conquest War") == 0)
                         {
@@ -312,7 +319,7 @@ namespace OurTinyBot
 
                             if (spawned)
                             {
-                                if (x + 1 != ls.Count)
+                                if (x + 1 != ls.Count) // if the nextboss to spawn is in the next day or not
                                 {
                                     await ctx.RespondAsync($"Next Boss Will Be {ls[x + 1]}.");
                                 }
@@ -328,7 +335,9 @@ namespace OurTinyBot
                 }
             }
         }
-
+	    
+	   
+	//timer for ingame day night cycle initilized with either day or night string 
         [Command("DayNight")]
         [RequireRolesAttribute(BotManager)]
         public async Task DayNight(CommandContext ctx, string time = "day", int hours = 0 , int minutes = 0)
@@ -393,7 +402,8 @@ namespace OurTinyBot
                 }
             }
         }
-
+	
+	// just deletes messages in chat. 
         [Command("Purge")]
         [RequireRolesAttribute(BotManager)]
         public async Task PurgeChat(CommandContext ctx)
@@ -415,6 +425,7 @@ namespace OurTinyBot
             await m.DeleteAsync();
         }
 
+	// for implemented requests list from users for bot commands / functions
         [Command("ViewRequests")]
         [RequireRolesAttribute(BotManager)]
         public async Task ViewRequests(CommandContext ctx)
@@ -427,7 +438,8 @@ namespace OurTinyBot
 
             await ctx.RespondAsync($"{s}");
         }
-
+	
+	// to remove a request
         [Command("RemoveRequest")]
         [RequireRolesAttribute(BotManager)]
         public async Task RemoveRequest(CommandContext ctx, int i)
@@ -441,7 +453,8 @@ namespace OurTinyBot
         #endregion
 
         #region DecMasters
-
+		
+	//adds a said cuck guild to a hitlist 
         [Command("AddCuck")]
         [RequireRolesAttribute(DecMaster)]
         public async Task AddCucks(CommandContext ctx)
@@ -472,7 +485,8 @@ namespace OurTinyBot
                 await ctx.RespondAsync($"```{guild.ViewAnnoyings()}```");
             }
         }
-
+	    
+	//removes a cuck from the hitlist
         [Command("RemoveCuck")]
         [RequireRolesAttribute(DecMaster)]
         public async Task RemoveCucks(CommandContext ctx, string g)
@@ -487,14 +501,16 @@ namespace OurTinyBot
                 await ctx.RespondAsync($"Not in Cucks list");
             }
         }
-
+	    
+	//views all cucks in the hitlist
         [Command("ViewCucks")]
         [RequireRolesAttribute(DecMaster)]
         public async Task ViewCucks(CommandContext ctx)
         {
             await ctx.RespondAsync($"```{guild.ViewAnnoyings()}```");
         }
-
+	    
+	//change cuck detail 
         [Command("ModifyCuck")]
         [RequireRolesAttribute(DecMaster)]
         public async Task ModifyCuck(CommandContext ctx)
@@ -527,6 +543,7 @@ namespace OurTinyBot
             }
         }
 
+	//returns a random cuck from the hitlist to be slaughtered.
         [Command("RandomCuck")]
         [RequireRolesAttribute(DecMaster)]
         public async Task RandomCuck(CommandContext ctx)
@@ -537,6 +554,7 @@ namespace OurTinyBot
 
         #region User Functions
 
+	//gives role to be notified by the bot when a boss spawns
         [Command("NotifyMe")]
         public async Task NotifyMe(CommandContext ctx)
         {
@@ -561,6 +579,7 @@ namespace OurTinyBot
             }
         }
 
+	//removes role from user
         [Command("UnNotifyMe")]
         public async Task UnNotifyMe(CommandContext ctx)
         {
@@ -585,6 +604,7 @@ namespace OurTinyBot
             }
         }
 
+	// starts a given timer for a user with given reason for x amount of minutes
         [Command("Timer")]
         public async Task Time(CommandContext ctx, int minutes, string reason = "")
         {
@@ -621,6 +641,7 @@ namespace OurTinyBot
             }
         }
 
+	// returns a random channel number from ingame
         [Command("RandomChannel")]
         public async Task RandomChannel(CommandContext ctx)
         {
@@ -648,6 +669,7 @@ namespace OurTinyBot
             await ctx.RespondAsync($"{ctx.User.Mention} Go to {list[channel]}{number}");               
         }
 
+	// form to be filled for people wanting something from the bot
         [Command("WishList")]
         public async Task WishList(CommandContext ctx)
         {
@@ -664,7 +686,8 @@ namespace OurTinyBot
                 await ctx.RespondAsync($"Request has been added and will be reviewd");
             }
         }
-
+	    
+	//ultimate REEE command?
         [Command("Reee")]
         public async Task Reee(CommandContext ctx)
         {
@@ -693,8 +716,9 @@ namespace OurTinyBot
 
             await ctx.RespondAsync($"{s}");
         }
-		
-		[Command("Mirumok")]
+	    
+	//Gives user the mirumok role
+	[Command("Mirumok")]
         public async Task Mirumok(CommandContext ctx)
         {
 
